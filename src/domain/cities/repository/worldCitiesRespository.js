@@ -15,7 +15,7 @@ exports.searchCitiesByCountryName = (inputCountryName) => {
 exports.searchCityByCityNameAndCountry = (inputCityName, inputCountryName) => {
     const result = []
     worldCitiesDataset.forEach((cityObject) => {
-        if(inputCityName === cityObject.name && inputCountryName === cityObject.country) result.push(cityObject)
+        if(inputCityName.toLowerCase() === cityObject.name.toLowerCase() && inputCountryName.toLowerCase() === cityObject.country.toLowerCase()) result.push(cityObject)
     })
     return result
 }
